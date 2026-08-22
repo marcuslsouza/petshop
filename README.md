@@ -5,23 +5,25 @@ Sistema web de comércio de produtos e serviços de um pet shop, desenvolvido na
 Site publicado: https://marcuslsouza.github.io/petshop/
 
 ## Páginas
-- **index.html** - 
-- **acessorios.html** - 
-- **racoes.html** - 
-- **higiene.html** - 
-- **servicos.html** - 
+- **index.html** - página inicial com apresentação da loja e links para as demais páginas.
+- **acessorios.html** - quatro acessórios com foto, descrição e valor.
+- **racoes.html** - duas rações com foto, descrição e valor.
+- **higiene.html** - dois produtos de higiene e limpeza com foto, descrição e valor.
+- **servicos.html** - tabela de banho e tosa com descrição, valor e acréscimo opcional de tele-busca.
 
 ## Funcionalidades
-- Menu...
-- Visualização...
-- Tabela de serviços...
-- Contatos...
+- Menu de navegação no cabeçalho e no rodapé (presente em todas as páginas).
+- Visualização dos produtos separados por categoria.
+- Tabela de serviços com valores e opção de tele-busca.
+- Contato por e-mail e telefone diretamente pelo rodapé.
 
 ## Tecnologias
-- HTML5
+- HTML5.
+
+Nesta fase não são utilizados CSS, Bootstrap ou JavaScript.
 
 ## Autor
 Marcus Ricardo Lopes de Souza
 
 ## Créditos
-Imagens de produtos: Magnific.com
+Imagens: Designed by [Magnific.com](https://www.magnific.com)
