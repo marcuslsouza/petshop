@@ -22,6 +22,8 @@ Site publicado: https://marcuslsouza.github.io/petshop/
 
 Nesta fase não são utilizados CSS, Bootstrap ou JavaScript.
 
+Todas as páginas foram validadas no [W3C Markup Validation Service](https://validator.w3.org/), sem erros ou avisos.
+
 ## Autor
 Marcus Ricardo Lopes de Souza
 
