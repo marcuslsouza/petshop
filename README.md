@@ -4,6 +4,8 @@ Sistema web de comércio de produtos e serviços de um pet shop, desenvolvido na
 
 Site publicado: https://marcuslsouza.github.io/petshop/
 
+**Este arquivo serve como documentação de ajuda do projeto, descrevendo as páginas e as funcionalidades do website.**
+
 ## Páginas
 - **index.html** - página inicial com apresentação da loja e links para as demais páginas.
 - **acessorios.html** - quatro acessórios com foto, descrição e valor.
