@@ -62,7 +62,7 @@ main img {
 
 /* Limita a largura do texto corrido para facilitar a leitura */
 .lead {
-    max-width: 640px;
+    max-width: 720px;
     color: var(--felpudos-texto-suave);
 }
 
