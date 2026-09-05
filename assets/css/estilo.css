@@ -168,6 +168,36 @@ main img {
     color: var(--felpudos-texto);
 }
 
+/* O progress nativo precisa de pseudo-elementos com prefixo para receber cor */
+.formulario-agendamento progress {
+    display: block;
+    width: 100%;
+    height: 12px;
+    margin-bottom: 0.25rem;
+}
+
+.formulario-agendamento progress::-webkit-progress-bar {
+    background-color: var(--felpudos-borda);
+    border-radius: var(--felpudos-raio);
+}
+
+.formulario-agendamento progress::-webkit-progress-value {
+    background-color: var(--felpudos-primaria);
+    border-radius: var(--felpudos-raio);
+}
+
+.formulario-agendamento progress::-moz-progress-bar {
+    background-color: var(--felpudos-primaria);
+    border-radius: var(--felpudos-raio);
+}
+
+.formulario-agendamento .valor-total {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--felpudos-primaria-escura);
+}
+
 /* CARROSSEL */
 .imagem-carrossel {
     height: 450px;
