@@ -1,79 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Shop Felpudos - Acessórios, Rações, Banho e Tosa</title>
+    <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
 </head>
-<body>
-    <header>
-        <h1>Pet Shop Felpudos</h1>
-        <p>Acessórios, Rações, Banho e Tosa</p>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="acessorios.html">Acessórios</a></li>
-                <li><a href="racoes.html">Rações</a></li>
-                <li><a href="higiene.html">Higiene e Limpeza</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-            </ul>
+<body>
+    <!-- Link de atalho (escondido até utilizarem o tab) -->
+    <a class="visually-hidden-focusable link-atalho" href="#conteudo">Pular para o conteúdo principal</a>
+
+    <!-- CABEÇALHO -->
+    <header>
+
+        <!-- Barra superior -->
+        <div class="barra-superior">
+            <div class="container py-1">
+                <p class="mb-0 small">Rua 3200, 1450 - Centro, Balneário Camboriú/SC</p>
+            </div>
+        </div>
+
+        <!-- Menu de navegação: componente navbar do Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-felpudos" data-bs-theme="dark" aria-label="Menu principal">
+            <div class="container">
+
+                <h1 class="navbar-brand marca">
+                    <a class="marca-nome" href="index.html">Pet Shop Felpudos</a>
+                    <span class="marca-slogan">Acessórios, Rações, Banho e Tosa</span>
+                </h1>
+
+                <!-- Botão sanfona, exibido apenas em telas pequenas -->
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                        aria-controls="menuPrincipal" aria-expanded="false"
+                        aria-label="Abrir e fechar o menu de navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <!-- aria-current="page" marca a página atual para leitores de tela -->
+                        <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acessorios.html">Acessórios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="racoes.html">Rações</a></li>
+                        <li class="nav-item"><a class="nav-link" href="higiene.html">Higiene e Limpeza</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                        <!-- Chamada principal. Continua sendo um link (leva para outra página) -->
+                        <li class="nav-item ms-lg-3">
+                            <a class="nav-link link-destaque" href="agendamento.html">Agendar banho e tosa</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </nav>
 
     </header>
-    
-    <section>
-        <h2>Bem-vindo ao Felpudos!</h2>
-        <p>
-            Somos uma loja online de produtos e serviços para cães e gatos com base em Balneário Camboriú/SC.
-            <br>
-            Aqui você encontra acessórios, rações e itens de higiene, além dos serviços de banho e tosa com opção de tele-busca.
-        </p>
 
-        <h3>Produtos</h3>
-        <ul>
-            <li><a href="acessorios.html">Acessórios</a> - arranhadores, bolinhas, camas e coleiras.</li>
-            <li><a href="racoes.html">Rações</a> - alimentação seca para cães e gatos.</li>
-            <li><a href="higiene.html">Higiene e Limpeza</a> - itens para cuidado diário e limpeza do ambiente.</li>
-        </ul>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="conteudo">
 
-        <h3>Serviços</h3>
-        <ul>
-            <li><a href="servicos.html">Banho e Tosa</a> - quatro modalidades, com opção de tele-busca do seu pet.</li>
-        </ul>
+        <section class="container secao">
+            <h2>Bem-vindo ao Felpudos!</h2>
+            <p class="lead">
+                Somos uma loja online de produtos e serviços para cães e gatos com base em Balneário Camboriú/SC.
+                <br>
+                Aqui você encontra acessórios, rações e itens de higiene, além dos serviços de banho e tosa com opção de tele-busca.
+            </p>
 
-    </section>
-    
-    <footer>
-        <h2>Dados para contato:</h2>
-
-        <address>
-            Pet Shop Felpudos
-            <br>
-            Rua 3200, 1450, Centro - Balneário Camboriú/SC
-            <br>
-            Telefone: <a href="tel:+5547999887766">(47) 99988-7766</a>
-            <br>
-            E-mail: <a href="mailto:contato@felpudospetshop.com.br?subject=Contato%20pelo%20website">contato@felpudospetshop.com.br</a>
-        </address>
-
-        <nav>
+            <h3>Produtos</h3>
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="acessorios.html">Acessórios</a></li>
-                <li><a href="racoes.html">Rações</a></li>
-                <li><a href="higiene.html">Higiene e Limpeza</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="acessorios.html">Acessórios</a> - arranhadores, bolinhas, camas e coleiras.</li>
+                <li><a href="racoes.html">Rações</a> - alimentação seca para cães e gatos.</li>
+                <li><a href="higiene.html">Higiene e Limpeza</a> - itens para cuidado diário e limpeza do ambiente.</li>
             </ul>
-        </nav>
 
-        <p>
-            <small>&copy; 2026 Pet Shop Felpudos. Autor: Marcus Ricardo Lopes de Souza</small>
-            <br>
-            <small>Imagens: Designed by <a href="https://www.magnific.com">Magnific.com</a></small>
-        </p>
+            <h3>Serviços</h3>
+            <ul>
+                <li><a href="servicos.html">Banho e Tosa</a> - quatro modalidades, com opção de tele-busca do seu pet.</li>
+            </ul>
+        </section>
 
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-12 col-md-5">
+                    <h2 class="h5">Dados para contato</h2>
+                    <address class="mb-0">
+                        Pet Shop Felpudos
+                        <br>
+                        Rua 3200, 1450, Centro - Balneário Camboriú/SC
+                        <br>
+                        Telefone: <a href="tel:+5547999887766">(47) 99988-7766</a>
+                        <br>
+                        E-mail: <a href="mailto:contato@felpudospetshop.com.br?subject=Contato%20pelo%20website">contato@felpudospetshop.com.br</a>
+                    </address>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h2 class="h5">Navegação</h2>
+                    <nav aria-label="Menu do rodapé">
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="acessorios.html">Acessórios</a></li>
+                            <li><a href="racoes.html">Rações</a></li>
+                            <li><a href="higiene.html">Higiene e Limpeza</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="agendamento.html">Agendamento</a></li>
+                            <li><a href="ajuda.html">Ajuda</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <h2 class="h5">Horário</h2>
+                    <p class="mb-0">
+                        Segunda a sexta: 8h às 19h
+                        <br>
+                        Sábado: 8h às 13h
+                        <br>
+                        Domingo: fechado
+                    </p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="mb-0 small">
+                &copy; <span id="ano-atual">2026</span> Pet Shop Felpudos.
+                Autor: Marcus Ricardo Lopes de Souza.
+                Imagens: Designed by <a href="https://www.magnific.com">Magnific.com</a>
+            </p>
+        </div>
     </footer>
-    
+
+    <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/principal.js"></script>
+
 </body>
 </html>
