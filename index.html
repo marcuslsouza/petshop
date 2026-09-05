@@ -65,12 +65,75 @@
     <main id="conteudo">
 
         <section class="container secao">
-            <h2>Bem-vindo ao Felpudos!</h2>
-            <p class="lead">
-                Somos uma loja online de produtos e serviços para cães e gatos com base em Balneário Camboriú/SC.
-                <br>
-                Aqui você encontra acessórios, rações e itens de higiene, além dos serviços de banho e tosa com opção de tele-busca.
-            </p>
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-12 col-lg-6">
+                    <h2>Bem-vindo ao Felpudos!</h2>
+                    <p class="lead mb-0">
+                        Somos uma loja online de produtos e serviços para cães e gatos com base em Balneário Camboriú/SC.
+                        <br>
+                        Aqui você encontra acessórios, rações e itens de higiene, além dos serviços de banho e tosa com opção de tele-busca.
+                    </p>
+                </div>
+
+                <!-- Carrossel de destaques: componente carousel do Bootstrap -->
+                <div class="col-12 col-lg-6">
+                    <div id="carrosselDestaques" class="carousel slide" data-bs-ride="carousel">
+
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carrosselDestaques" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Destaque 1: banho e tosa"></button>
+                            <button type="button" data-bs-target="#carrosselDestaques" data-bs-slide-to="1" aria-label="Destaque 2: acessórios"></button>
+                            <button type="button" data-bs-target="#carrosselDestaques" data-bs-slide-to="2" aria-label="Destaque 3: rações"></button>
+                            <button type="button" data-bs-target="#carrosselDestaques" data-bs-slide-to="3" aria-label="Destaque 4: higiene e limpeza"></button>
+                        </div>
+
+                        <div class="carousel-inner rounded">
+
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="assets/images/servicos/banho-e-tosa.jpg" class="d-block w-100 imagem-carrossel" alt="Cachorro preto de grande porte sendo escovado por profissional de pet shop" width="700" height="500">
+                                <div class="carousel-caption">
+                                    <a class="link-carrossel" href="servicos.html">Banho e tosa com opção de tele-busca</a>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="assets/images/acessorios/cama-almofadada-bege.jpg" class="d-block w-100 imagem-carrossel" alt="Cama para gatos com forro bege acolchoado e base preta impermeável" width="500" height="500">
+                                <div class="carousel-caption">
+                                    <a class="link-carrossel" href="acessorios.html">Acessórios para o conforto do seu pet</a>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="assets/images/racoes/racao-seca-premium-gatos-castrados.jpg" class="d-block w-100 imagem-carrossel" alt="Pote rosa cheio de ração seca em grãos" width="500" height="500">
+                                <div class="carousel-caption">
+                                    <a class="link-carrossel" href="racoes.html">Rações para todas as fases da vida</a>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="assets/images/higiene/caixa-de-areia-fechada.jpg" class="d-block w-100 imagem-carrossel" alt="Caixa de areia fechada bege com cobertura removível e areia sanitária" width="500" height="500">
+                                <div class="carousel-caption">
+                                    <a class="link-carrossel" href="higiene.html">Higiene e limpeza para o dia a dia</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Botões para controles manuais -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carrosselDestaques" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Destaque anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carrosselDestaques" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Próximo destaque</span>
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
 
             <h3>Produtos</h3>
             <ul>

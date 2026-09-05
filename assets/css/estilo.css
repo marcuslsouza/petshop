@@ -108,6 +108,63 @@ main img {
     max-width: 600px;
 }
 
+/* CARROSSEL */
+.imagem-carrossel {
+    height: 450px;
+    object-fit: cover;
+}
+
+/* Faixa verde escura atrás da legenda */
+.carousel-caption {
+    right: 5%;
+    bottom: 3rem;
+    left: 5%;
+    padding: 0.75rem 1rem;
+    background-color: rgba(18, 64, 61, 0.85);
+    border-radius: var(--felpudos-raio);
+}
+
+/* Sombra escura e opacidade maior para as setas */
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 0.7;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.9));
+}
+
+/* Mesma ideia nos indicadores de posição */
+.carousel-indicators [data-bs-target] {
+    height: 6px;
+    opacity: 0.5;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.9));
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: var(--felpudos-destaque);
+}
+
+/* A legenda vira o link do slide. Fica branca porque a faixa verde é escura */
+.link-carrossel {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.link-carrossel:hover {
+    color: var(--felpudos-destaque-clara);
+}
+
+/* Respeita quem pediu menos movimento nas configurações do sistema */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-item {
+        transition: none;
+    }
+}
+
 /* ACESSIBILIDADE */
 
 /* Link de atalho: aparece sobre o cabeçalho quando recebe foco */
