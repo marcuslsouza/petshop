@@ -30,4 +30,6 @@ Todas as páginas foram validadas no [W3C Markup Validation Service](https://val
 Marcus Ricardo Lopes de Souza
 
 ## Créditos
-Imagens: Designed by [Magnific.com](https://www.magnific.com)
+- Imagens: Designed by [Magnific.com](https://www.magnific.com)
+- Fonte: Nunito (https://github.com/googlefonts/nunito)
+- Bootstrap v5.3.8 (https://getbootstrap.com/)
