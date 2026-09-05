@@ -85,6 +85,29 @@ main img {
     margin-top: 0;
 }
 
+/* TABELA DE SERVIÇOS */
+.tabela-servicos thead {
+    background-color: var(--felpudos-primaria);
+    color: #ffffff;
+}
+
+.tabela-servicos tfoot {
+    background-color: var(--felpudos-fundo);
+    font-weight: 600;
+}
+
+/* O caption padrão fica embaixo da tabela e em cinza claro */
+.tabela-servicos caption {
+    caption-side: top;
+    color: var(--felpudos-texto);
+    font-weight: bold;
+}
+
+/* Limita a imagem do serviço para não dominar a página no desktop */
+.figura-servicos img {
+    max-width: 600px;
+}
+
 /* ACESSIBILIDADE */
 
 /* Link de atalho: aparece sobre o cabeçalho quando recebe foco */

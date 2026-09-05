@@ -72,47 +72,57 @@
                 Todos os serviços podem ser contratados com tele-busca: nós buscamos e devolvemos o seu pet em casa limpo e cheiroso.
             </p>
 
-            <img src="assets/images/servicos/banho-e-tosa.jpg" alt="Cachorro preto de grande porte sendo escovado por profissional de pet shop" width="600" height="400">
+            <figure class="figura-servicos">
+                <img src="assets/images/servicos/banho-e-tosa.jpg" class="rounded" alt="Cachorro preto de grande porte sendo escovado por profissional de pet shop" width="600" height="400">
+            </figure>
 
             <h3>Tabela de preços</h3>
 
-            <table>
-                <caption>Serviços e valores</caption>
-                <thead>
-                    <tr>
-                        <th>Serviço</th>
-                        <th>Descrição</th>
-                        <th>Tele-busca</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Banho Básico</td>
-                        <td>Banho com shampoo neutro, secagem e escovação.</td>
-                        <td>Opcional (+ R$ 25,00)</td>
-                        <td>R$ 60,00</td>
-                    </tr>
-                    <tr>
-                        <td>Banho Premium</td>
-                        <td>Banho com shampoo hidratante, condicionador, secagem, escovação, limpeza de ouvidos e corte de unhas.</td>
-                        <td>Opcional (+ R$ 25,00)</td>
-                        <td>R$ 100,00</td>
-                    </tr>
-                    <tr>
-                        <td>Tosa Higiênica</td>
-                        <td>Aparo do pelo das patas, barriga e região íntima.</td>
-                        <td>Opcional (+ R$ 25,00)</td>
-                        <td>R$ 70,00</td>
-                    </tr>
-                    <tr>
-                        <td>Tosa Premium</td>
-                        <td>Tosa completa na tesoura ou máquina, com acabamento conforme a raça ou pedido do tutor.</td>
-                        <td>Opcional (+ R$ 25,00)</td>
-                        <td>R$ 130,00</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- O table-responsive faz a tabela rolar sozinha no celular, sem empurrar a página -->
+            <div class="table-responsive">
+                <table class="table table-striped tabela-servicos">
+                    <caption>Serviços e valores</caption>
+                    <thead>
+                        <tr>
+                            <th>Serviço</th>
+                            <th>Descrição</th>
+                            <th>Tele-busca</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Banho Básico</td>
+                            <td>Banho com shampoo neutro, secagem e escovação.</td>
+                            <td>Opcional (+ R$ 25,00)</td>
+                            <td>R$ 60,00</td>
+                        </tr>
+                        <tr>
+                            <td>Banho Premium</td>
+                            <td>Banho com shampoo hidratante, condicionador, secagem, escovação, limpeza de ouvidos e corte de unhas.</td>
+                            <td>Opcional (+ R$ 25,00)</td>
+                            <td>R$ 100,00</td>
+                        </tr>
+                        <tr>
+                            <td>Tosa Higiênica</td>
+                            <td>Aparo do pelo das patas, barriga e região íntima.</td>
+                            <td>Opcional (+ R$ 25,00)</td>
+                            <td>R$ 70,00</td>
+                        </tr>
+                        <tr>
+                            <td>Tosa Premium</td>
+                            <td>Tosa completa na tesoura ou máquina, com acabamento conforme a raça ou pedido do tutor.</td>
+                            <td>Opcional (+ R$ 25,00)</td>
+                            <td>R$ 130,00</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">A tele-busca custa R$ 25,00 por atendimento e pode ser contratada com qualquer um dos serviços acima.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
 
         </section>
 
