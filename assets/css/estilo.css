@@ -114,6 +114,60 @@ main img {
     max-width: 600px;
 }
 
+/* FORMULÁRIO DE AGENDAMENTO */
+.formulario-agendamento fieldset {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--felpudos-superficie);
+    border: 1px solid var(--felpudos-borda);
+    border-radius: var(--felpudos-raio);
+}
+
+/* O Bootstrap deixa a legend em bloco de largura total, o que atrapalha dentro da moldura */
+.formulario-agendamento legend {
+    float: none;
+    width: auto;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--felpudos-primaria-escura);
+}
+
+/* Grupos de opções são fieldsets aninhados e não repetem a moldura do de fora */
+.formulario-agendamento .grupo-opcoes {
+    margin-bottom: 0;
+    padding: 0 0 0 0.5rem;
+    background-color: transparent;
+    border: 0;
+}
+
+.formulario-agendamento .grupo-opcoes legend {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--felpudos-texto);
+}
+
+.formulario-agendamento .form-label,
+.formulario-agendamento .grupo-opcoes legend {
+    font-weight: bold;
+}
+
+.formulario-agendamento .grupo-opcoes .form-check {
+    margin-top: 0.5rem;
+}
+
+.botao-enviar {
+    background-color: var(--felpudos-destaque);
+    border: 1px solid var(--felpudos-destaque-escura);
+    color: var(--felpudos-texto);
+    font-weight: bold;
+}
+
+.botao-enviar:hover {
+    background-color: var(--felpudos-destaque-escura);
+    color: var(--felpudos-texto);
+}
+
 /* CARROSSEL */
 .imagem-carrossel {
     height: 450px;

@@ -72,7 +72,169 @@
                 Preencha os dados do tutor e do pet, escolha o serviço e a data desejada.
                 <br>
                 Entraremos em contato para confirmar o horário.
+                <br>
+                Os campos marcados com asterísco (*) são obrigatórios.
             </p>
+
+            <!-- Uso POST pois a ficha traz dados pessoais e não deve aparecer na URL. O FormSubmit encaminha o conteúdo por e-mail, sem precisar de servidor próprio. -->
+            <form class="formulario-agendamento" action="https://formsubmit.co/EMAIL_PUBLICO" method="POST">
+
+                <!-- Assunto da mensagem que o FormSubmit envia -->
+                <input type="hidden" name="_subject" value="Novo agendamento pelo site">
+
+                <fieldset>
+                    <legend>Dados do cliente</legend>
+
+                    <div class="row g-3">
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="nome">Nome completo *</label>
+                            <input class="form-control" type="text" id="nome" name="nome" placeholder="Nome completo do tutor" autocomplete="name" required>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="cpf">CPF *</label>
+                            <input class="form-control" type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" required>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <label class="form-label" for="telefone">Telefone *</label>
+                            <input class="form-control" type="tel" id="telefone" name="telefone" placeholder="(47) 99999-9999" autocomplete="tel" required>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <label class="form-label" for="email">E-mail *</label>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="voce@exemplo.com.br" autocomplete="email" required>
+                        </div>
+
+                        <!-- Grupo de opções em fieldset aninhado, para o leitor de tela ler a pergunta junto de cada opção -->
+                        <fieldset class="grupo-opcoes col-12 col-md-4">
+                            <legend>Forma de tratamento *</legend>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="tratamento-sra" name="tratamento" value="Sra." required>
+                                <label class="form-check-label" for="tratamento-sra">Sra.</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="tratamento-sr" name="tratamento" value="Sr.">
+                                <label class="form-check-label" for="tratamento-sr">Sr.</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="tratamento-nenhum" name="tratamento" value="Sem tratamento">
+                                <label class="form-check-label" for="tratamento-nenhum">Sem tratamento</label>
+                            </div>
+                        </fieldset>
+
+                        <div class="col-12">
+                            <label class="form-label" for="endereco">Endereço *</label>
+                            <textarea class="form-control" id="endereco" name="endereco" rows="2" placeholder="Rua, número, complemento, bairro, cidade e estado" autocomplete="street-address" required></textarea>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dados do pet</legend>
+
+                    <div class="row g-3">
+
+                        <div class="col-12 col-md-3">
+                            <label class="form-label" for="pet-nome">Nome do pet *</label>
+                            <input class="form-control" type="text" id="pet-nome" name="pet_nome" placeholder="Nome do pet" required>
+                        </div>
+
+                        <fieldset class="grupo-opcoes col-md-3">
+                            <legend>Espécie *</legend>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="especie-cao" name="pet_especie" value="Cão" required>
+                                <label class="form-check-label" for="especie-cao">Cão</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="especie-gato" name="pet_especie" value="Gato">
+                                <label class="form-check-label" for="especie-gato">Gato</label>
+                            </div>
+                        </fieldset>
+
+                        <div class="col-12 col-md-3">
+                            <label class="form-label" for="pet-raca">Raça *</label>
+                            <input class="form-control" type="text" id="pet-raca" name="pet_raca" placeholder="Informe a raça ou SRD" required>
+                        </div>
+
+                        <div class="col-12 col-md-3">
+                            <label class="form-label" for="pet-idade">Idade em anos *</label>
+                            <input class="form-control" type="number" id="pet-idade" name="pet_idade" placeholder="0" min="0" max="30" required>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Agendamento</legend>
+
+                    <div class="row g-3">
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="servico">Serviço *</label>
+                            <select class="form-select" id="servico" name="servico" required>
+                                <option value="">Selecione o serviço</option>
+                                <option value="Banho Básico">Banho Básico - R$ 60,00</option>
+                                <option value="Banho Premium">Banho Premium - R$ 100,00</option>
+                                <option value="Tosa Higiênica">Tosa Higiênica - R$ 70,00</option>
+                                <option value="Tosa Premium">Tosa Premium - R$ 130,00</option>
+                            </select>
+                        </div>
+
+                        <fieldset class="grupo-opcoes col-12 col-md-6">
+                            <legend>Como o pet chega até nós *</legend>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="modalidade-local" name="modalidade" value="Entrega no local" required>
+                                <label class="form-check-label" for="modalidade-local">Levo o pet até a loja</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="modalidade-telebusca" name="modalidade" value="Tele-busca">
+                                <label class="form-check-label" for="modalidade-telebusca">Tele-busca, acréscimo de R$ 25,00</label>
+                            </div>
+                        </fieldset>
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="data">Data *</label>
+                            <input class="form-control" type="date" id="data" name="data" required>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="horario">Horário *</label>
+                            <select class="form-select" id="horario" name="horario" required>
+                                <option value="">Selecione o horário</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="aceite" name="aceite" value="Sim" required>
+                                <label class="form-check-label" for="aceite">Autorizo o Pet Shop Felpudos a usar meus dados para confirmar este agendamento *</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <p class="d-flex flex-wrap gap-2">
+                    <button class="btn botao-enviar" type="submit">Enviar agendamento</button>
+                    <button class="btn btn-outline-secondary" type="reset">Limpar formulário</button>
+                </p>
+
+            </form>
+
         </section>
 
     </main>
