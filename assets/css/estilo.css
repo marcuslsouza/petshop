@@ -54,6 +54,12 @@ main a:hover {
     color: var(--felpudos-primaria-escura);
 }
 
+/* Impede que as imagens do conteúdo estourem a largura do container */
+main img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Limita a largura do texto corrido para facilitar a leitura */
 .lead {
     max-width: 640px;
