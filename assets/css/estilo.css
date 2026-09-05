@@ -71,6 +71,20 @@ main img {
     padding-bottom: 3rem;
 }
 
+/* CARDS DE PRODUTOS */
+.card {
+    background-color: var(--felpudos-superficie);
+    border: 1px solid var(--felpudos-borda);
+    border-radius: var(--felpudos-raio);
+    /* Recorta a imagem nos cantos arredondados do cartão */
+    overflow: hidden;
+}
+
+/* Anula a margem de main h3 que existe para os títulos de seção */
+.card-title {
+    margin-top: 0;
+}
+
 /* ACESSIBILIDADE */
 
 /* Link de atalho: aparece sobre o cabeçalho quando recebe foco */
