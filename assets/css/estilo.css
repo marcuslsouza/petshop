@@ -85,6 +85,12 @@ main img {
     margin-top: 0;
 }
 
+/* Iguala a altura das fotos, recortando as que têm proporção diferente */
+.card-img-top {
+    height: 320px;
+    object-fit: cover;
+}
+
 /* TABELA DE SERVIÇOS */
 .tabela-servicos thead {
     background-color: var(--felpudos-primaria);
