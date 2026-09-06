@@ -1,7 +1,7 @@
 /* TIPOGRAFIA */
 @font-face {
     font-family: "Nunito";
-    /* Criei um subset da fonte variável para aliviar o peso */
+    /* Criei um subset da versão variável da fonte e exportei em woff2 para aliviar o peso. Usei arquivo local para garantir disponibilidade. */
     src: url("../fonts/Nunito-VariableFont_wght-subset.woff2") format("woff2");
     font-weight: 100 900;
     font-style: normal;
