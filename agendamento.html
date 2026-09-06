@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Pet Shop Felpudos</title>
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon.png" sizes="96x96">
+
+    <!-- Utilizei a versão local do Bootstrap v5.3.8 para garantir disponibilidade -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+
+<body>
+    <!-- Link de atalho (escondido até utilizarem o tab) -->
+    <a class="visually-hidden-focusable link-atalho" href="#conteudo">Pular para o conteúdo principal</a>
+
+    <!-- CABEÇALHO -->
+    <header>
+
+        <!-- Barra superior -->
+        <div class="barra-superior">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2 py-1">
+                <p class="mb-0 small">Rua 3200, 1450 - Centro, Balneário Camboriú/SC</p>
+                <span id="situacao-loja" class="badge text-bg-secondary">Segunda a sexta, 8h às 19h</span>
+            </div>
+        </div>
+
+        <!-- Menu de navegação: componente navbar do Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-felpudos" data-bs-theme="dark" aria-label="Menu principal">
+            <div class="container">
+
+                <h1 class="navbar-brand marca">
+                    <a class="marca-nome" href="index.html">Pet Shop Felpudos</a>
+                    <span class="marca-slogan">Acessórios, Rações, Banho e Tosa</span>
+                </h1>
+
+                <!-- Botão sanfona, exibido apenas em telas pequenas -->
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                        aria-controls="menuPrincipal" aria-expanded="false"
+                        aria-label="Abrir e fechar o menu de navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <!-- aria-current="page" marca a página atual para leitores de tela -->
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acessorios.html">Acessórios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="racoes.html">Rações</a></li>
+                        <li class="nav-item"><a class="nav-link" href="higiene.html">Higiene e Limpeza</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                        <!-- Chamada principal. Continua sendo um link (leva para outra página) -->
+                        <li class="nav-item ms-lg-3">
+                            <a class="nav-link link-destaque active" href="agendamento.html" aria-current="page">Agendar banho e tosa</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="conteudo">
+
+        <section class="container secao">
+            <h2>Agendamento de banho e tosa</h2>
+            <p class="lead">
+                Preencha os dados do tutor e do pet, escolha o serviço e a data desejada.
+                <br>
+                Entraremos em contato para confirmar o horário.
+                <br>
+                Os campos marcados com asterisco (*) são obrigatórios.
+            </p>
+
+            <!-- Uso POST pois a ficha traz dados pessoais e não deve aparecer na URL. O FormSubmit encaminha o conteúdo por e-mail, sem precisar de servidor próprio. -->
+            <form class="formulario-agendamento" id="formularioAgendamento" action="https://formsubmit.co/50182607+marcuslsouza@users.noreply.github.com" method="POST">
+
+                <!-- Assunto da mensagem que o FormSubmit envia -->
+                <input type="hidden" name="_subject" value="Novo agendamento pelo site">
+
+                <!-- Barra atualizada pelo agendamento.js conforme os campos obrigatórios ficam válidos -->
+                <p class="barra-preenchimento">
+                    <label class="form-label" for="preenchimento">Preenchimento do formulário</label>
+                    <progress id="preenchimento" max="100" value="0"></progress>
+                    <span class="small" id="percentual">0% preenchido</span>
+                </p>
+
+                <fieldset>
+                    <legend>Dados do cliente</legend>
+
+                    <div class="row g-3">
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="nome">Nome completo *</label>
+                            <input class="form-control" type="text" id="nome" name="nome" placeholder="Nome completo do tutor" autocomplete="name" required>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="cpf">CPF *</label>
+                            <input class="form-control" type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" required>
+                            <!-- O agendamento.js acrescenta is-invalid ao campo para este aviso aparecer -->
+                            <div class="invalid-feedback">Informe os 11 dígitos do CPF.</div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <label class="form-label" for="telefone">Telefone *</label>
+                            <input class="form-control" type="tel" id="telefone" name="telefone" placeholder="(47) 99999-9999" autocomplete="tel" required>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <label class="form-label" for="email">E-mail *</label>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="voce@exemplo.com.br" autocomplete="email" required>
+                        </div>
+
+                        <!-- Grupo de opções em fieldset aninhado, para o leitor de tela ler a pergunta junto de cada opção -->
+                        <fieldset class="grupo-opcoes col-12 col-md-4">
+                            <legend>Forma de tratamento *</legend>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="tratamento-sra" name="tratamento" value="Sra." required>
+                                <label class="form-check-label" for="tratamento-sra">Sra.</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="tratamento-sr" name="tratamento" value="Sr.">
+                                <label class="form-check-label" for="tratamento-sr">Sr.</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="tratamento-nenhum" name="tratamento" value="Sem tratamento">
+                                <label class="form-check-label" for="tratamento-nenhum">Sem tratamento</label>
+                            </div>
+                        </fieldset>
+
+                        <div class="col-12">
+                            <label class="form-label" for="endereco">Endereço *</label>
+                            <textarea class="form-control" id="endereco" name="endereco" rows="2" placeholder="Rua, número, complemento, bairro, cidade e estado" autocomplete="street-address" required></textarea>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dados do pet</legend>
+
+                    <div class="row g-3">
+
+                        <div class="col-12 col-md-3">
+                            <label class="form-label" for="pet-nome">Nome do pet *</label>
+                            <input class="form-control" type="text" id="pet-nome" name="pet_nome" placeholder="Nome do pet" required>
+                        </div>
+
+                        <fieldset class="grupo-opcoes col-12 col-md-3">
+                            <legend>Espécie *</legend>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="especie-cao" name="pet_especie" value="Cão" required>
+                                <label class="form-check-label" for="especie-cao">Cão</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="especie-gato" name="pet_especie" value="Gato">
+                                <label class="form-check-label" for="especie-gato">Gato</label>
+                            </div>
+                        </fieldset>
+
+                        <div class="col-12 col-md-3">
+                            <label class="form-label" for="pet-raca">Raça *</label>
+                            <input class="form-control" type="text" id="pet-raca" name="pet_raca" placeholder="Informe a raça ou SRD" required>
+                        </div>
+
+                        <div class="col-12 col-md-3">
+                            <label class="form-label" for="pet-idade">Idade em anos *</label>
+                            <input class="form-control" type="number" id="pet-idade" name="pet_idade" placeholder="0" min="0" max="30" required>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Agendamento</legend>
+
+                    <div class="row g-3">
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="servico">Serviço *</label>
+                            <select class="form-select" id="servico" name="servico" required>
+                                <option value="">Selecione o serviço</option>
+                                <option value="Banho Básico">Banho Básico - R$ 60,00</option>
+                                <option value="Banho Premium">Banho Premium - R$ 100,00</option>
+                                <option value="Tosa Higiênica">Tosa Higiênica - R$ 70,00</option>
+                                <option value="Tosa Premium">Tosa Premium - R$ 130,00</option>
+                            </select>
+                        </div>
+
+                        <fieldset class="grupo-opcoes col-12 col-md-6">
+                            <legend>Como o pet chega até nós *</legend>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="modalidade-local" name="modalidade" value="Entrega no local" required>
+                                <label class="form-check-label" for="modalidade-local">Levo o pet até a loja</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="modalidade-telebusca" name="modalidade" value="Tele-busca">
+                                <label class="form-check-label" for="modalidade-telebusca">Tele-busca, acréscimo de R$ 25,00</label>
+                            </div>
+                        </fieldset>
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="data">Data *</label>
+                            <input class="form-control" type="date" id="data" name="data" required>
+                            <div class="invalid-feedback">Escolha uma data a partir de amanhã, de segunda a sábado.</div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="horario">Horário *</label>
+                            <select class="form-select" id="horario" name="horario" required>
+                                <option value="">Selecione o horário</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label" for="valor-total">Valor total</label>
+                            <!-- O for lista os identificadores dos campos que entram no cálculo -->
+                            <output class="valor-total" id="valor-total" for="servico modalidade-local modalidade-telebusca">Selecione o serviço</output>
+                            <!-- O output não é enviado no POST, então o valor segue junto por um campo oculto -->
+                            <input type="hidden" id="valor-total-envio" name="valor_total">
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="aceite" name="aceite" value="Sim" required>
+                                <label class="form-check-label" for="aceite">Autorizo o Pet Shop Felpudos a usar meus dados para confirmar este agendamento *</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <p>
+                    <button class="btn botao-enviar" type="submit">Enviar agendamento</button>
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-12 col-md-5">
+                    <h2 class="h5">Dados para contato</h2>
+                    <address class="mb-0">
+                        Pet Shop Felpudos
+                        <br>
+                        Rua 3200, 1450, Centro - Balneário Camboriú/SC
+                        <br>
+                        Telefone: <a href="tel:+5547999887766">(47) 99988-7766</a>
+                        <br>
+                        E-mail: <a href="mailto:contato@felpudospetshop.com.br?subject=Contato%20pelo%20website">contato@felpudospetshop.com.br</a>
+                    </address>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h2 class="h5">Navegação</h2>
+                    <nav aria-label="Menu do rodapé">
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="acessorios.html">Acessórios</a></li>
+                            <li><a href="racoes.html">Rações</a></li>
+                            <li><a href="higiene.html">Higiene e Limpeza</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="agendamento.html">Agendamento</a></li>
+                            <li><a href="ajuda.html">Ajuda</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <h2 class="h5">Horário</h2>
+                    <p class="mb-0">
+                        Segunda a sexta: 8h às 19h
+                        <br>
+                        Sábado: 8h às 13h
+                        <br>
+                        Domingo: fechado
+                    </p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="mb-0 small">
+                &copy; <span id="ano-atual">2026</span> Pet Shop Felpudos.
+                Autor: Marcus Ricardo Lopes de Souza.
+                Imagens: Designed by <a href="https://www.magnific.com">Magnific.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/principal.js"></script>
+    <script src="assets/js/agendamento.js"></script>
+
+</body>
+</html>

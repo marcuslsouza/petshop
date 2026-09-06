@@ -1,77 +1,171 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rações - Pet Shop Felpudos</title>
-</head>
-<body>
-    <header>
-        <h1>Rações - Pet Shop Felpudos</h1>
-        <p>Aqui você encontrará as melhores rações para seu pet.</p>
+    
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon.png" sizes="96x96">
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="acessorios.html">Acessórios</a></li>
-                <li><a href="racoes.html">Rações</a></li>
-                <li><a href="higiene.html">Higiene e Limpeza</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-            </ul>
+    <!-- Utilizei a versão local do Bootstrap v5.3.8 para garantir disponibilidade -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+
+<body>
+    <!-- Link de atalho (escondido até utilizarem o tab) -->
+    <a class="visually-hidden-focusable link-atalho" href="#conteudo">Pular para o conteúdo principal</a>
+
+    <!-- CABEÇALHO -->
+    <header>
+
+        <!-- Barra superior -->
+        <div class="barra-superior">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2 py-1">
+                <p class="mb-0 small">Rua 3200, 1450 - Centro, Balneário Camboriú/SC</p>
+                <span id="situacao-loja" class="badge text-bg-secondary">Segunda a sexta, 8h às 19h</span>
+            </div>
+        </div>
+
+        <!-- Menu de navegação: componente navbar do Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-felpudos" data-bs-theme="dark" aria-label="Menu principal">
+            <div class="container">
+
+                <h1 class="navbar-brand marca">
+                    <a class="marca-nome" href="index.html">Pet Shop Felpudos</a>
+                    <span class="marca-slogan">Acessórios, Rações, Banho e Tosa</span>
+                </h1>
+
+                <!-- Botão sanfona, exibido apenas em telas pequenas -->
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                        aria-controls="menuPrincipal" aria-expanded="false"
+                        aria-label="Abrir e fechar o menu de navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <!-- aria-current="page" marca a página atual para leitores de tela -->
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acessorios.html">Acessórios</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="racoes.html" aria-current="page">Rações</a></li>
+                        <li class="nav-item"><a class="nav-link" href="higiene.html">Higiene e Limpeza</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                        <!-- Chamada principal. Continua sendo um link (leva para outra página) -->
+                        <li class="nav-item ms-lg-3">
+                            <a class="nav-link link-destaque" href="agendamento.html">Agendar banho e tosa</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </nav>
 
     </header>
-    
-    <section>
-        <h2>Rações para Cães e Gatos</h2>
-        <p>Alimentação de qualidade para pets filhotes a idosos.</p>
 
-        <article>
-            <h3>Ração Seca para Cães Adultos</h3>
-            <img src="assets/images/racoes/racao-seca-caes-adultos.jpg" alt="Grãos de ração seca em formatos e cores variadas" width="400" height="400">
-            <p>Frango e cereais, embalagem de 10 kg. Grãos médios para cães adultos de porte pequeno e médio. Contém vitaminas e minerais.</p>
-            <p>Valor: <strong>R$ 89,90</strong></p>
-        </article>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="conteudo">
 
-        <article>
-            <h3>Ração Seca Premium para Gatos Castrados</h3>
-            <img src="assets/images/racoes/racao-seca-premium-gatos-castrados.jpg" alt="Pote rosa cheio de ração seca em grãos" width="400" height="400">
-            <p>Salmão e fibras naturais, embalagem de 10 kg. Teor reduzido de gordura e adição de L-carnitina. Indicada para gatos castrados a partir de 1 ano.</p>
-            <p>Valor: <strong>R$ 169,90</strong></p>
-        </article>
+        <section class="container secao">
+            <h2>Rações para Cães e Gatos</h2>
+            <p class="lead">
+                Aqui você encontrará as melhores rações para seu pet.
+                <br>
+                Alimentação de qualidade para pets filhotes a idosos.
+            </p>
 
-    </section>
-    
-    <footer>
-        <h2>Dados para contato:</h2>
+            <!-- Dois produtos: uma coluna no celular, duas a partir do tablet -->
+            <div class="row g-4">
 
-        <address>
-            Pet Shop Felpudos
-            <br>
-            Rua 3200, 1450, Centro - Balneário Camboriú/SC
-            <br>
-            Telefone: <a href="tel:+5547999887766">(47) 99988-7766</a>
-            <br>
-            E-mail: <a href="mailto:contato@felpudospetshop.com.br?subject=Contato%20pelo%20website">contato@felpudospetshop.com.br</a>
-        </address>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="card h-100">
+                        <img src="assets/images/racoes/racao-seca-caes-adultos.jpg" class="card-img-top" alt="Grãos de ração seca em formatos e cores variadas" width="400" height="400">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Ração Seca para Cães Adultos</h3>
+                            <p class="card-text">Frango e cereais, embalagem de 10 kg. Grãos médios para cães adultos de porte pequeno e médio. Contém vitaminas e minerais.</p>
+                            <p class="mb-0 mt-auto">Valor: <strong>R$ 89,90</strong></p>
+                        </div>
+                    </article>
+                </div>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="acessorios.html">Acessórios</a></li>
-                <li><a href="racoes.html">Rações</a></li>
-                <li><a href="higiene.html">Higiene e Limpeza</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-            </ul>
-        </nav>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="card h-100">
+                        <img src="assets/images/racoes/racao-seca-premium-gatos-castrados.jpg" class="card-img-top" alt="Pote rosa cheio de ração seca em grãos" width="400" height="400">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Ração Seca Premium para Gatos Castrados</h3>
+                            <p class="card-text">Salmão e fibras naturais, embalagem de 10 kg. Teor reduzido de gordura e adição de L-carnitina. Indicada para gatos castrados a partir de 1 ano.</p>
+                            <p class="mb-0 mt-auto">Valor: <strong>R$ 169,90</strong></p>
+                        </div>
+                    </article>
+                </div>
 
-        <p>
-            <small>&copy; 2026 Pet Shop Felpudos. Autor: Marcus Ricardo Lopes de Souza</small>
-            <br>
-            <small>Imagens: Designed by <a href="https://www.magnific.com">Magnific.com</a></small>
-        </p>
+            </div>
 
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-12 col-md-5">
+                    <h2 class="h5">Dados para contato</h2>
+                    <address class="mb-0">
+                        Pet Shop Felpudos
+                        <br>
+                        Rua 3200, 1450, Centro - Balneário Camboriú/SC
+                        <br>
+                        Telefone: <a href="tel:+5547999887766">(47) 99988-7766</a>
+                        <br>
+                        E-mail: <a href="mailto:contato@felpudospetshop.com.br?subject=Contato%20pelo%20website">contato@felpudospetshop.com.br</a>
+                    </address>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h2 class="h5">Navegação</h2>
+                    <nav aria-label="Menu do rodapé">
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="acessorios.html">Acessórios</a></li>
+                            <li><a href="racoes.html">Rações</a></li>
+                            <li><a href="higiene.html">Higiene e Limpeza</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="agendamento.html">Agendamento</a></li>
+                            <li><a href="ajuda.html">Ajuda</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <h2 class="h5">Horário</h2>
+                    <p class="mb-0">
+                        Segunda a sexta: 8h às 19h
+                        <br>
+                        Sábado: 8h às 13h
+                        <br>
+                        Domingo: fechado
+                    </p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="mb-0 small">
+                &copy; <span id="ano-atual">2026</span> Pet Shop Felpudos.
+                Autor: Marcus Ricardo Lopes de Souza.
+                Imagens: Designed by <a href="https://www.magnific.com">Magnific.com</a>
+            </p>
+        </div>
     </footer>
-    
+
+    <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/principal.js"></script>
+
 </body>
 </html>

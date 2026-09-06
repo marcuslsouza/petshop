@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Higiene e Limpeza - Pet Shop Felpudos</title>
+    <title>Ajuda - Pet Shop Felpudos</title>
     
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="assets/favicon.png" sizes="96x96">
@@ -47,13 +47,13 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <!-- Ajuda não tem item no menu, então nenhum link recebe active nesta página -->
                 <div class="collapse navbar-collapse" id="menuPrincipal">
                     <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <!-- aria-current="page" marca a página atual para leitores de tela -->
                         <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
                         <li class="nav-item"><a class="nav-link" href="acessorios.html">Acessórios</a></li>
                         <li class="nav-item"><a class="nav-link" href="racoes.html">Rações</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="higiene.html" aria-current="page">Higiene e Limpeza</a></li>
+                        <li class="nav-item"><a class="nav-link" href="higiene.html">Higiene e Limpeza</a></li>
                         <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
                         <!-- Chamada principal. Continua sendo um link (leva para outra página) -->
                         <li class="nav-item ms-lg-3">
@@ -71,39 +71,82 @@
     <main id="conteudo">
 
         <section class="container secao">
-            <h2>Higiene e Limpeza para Cães e Gatos</h2>
+            <h2>Ajuda</h2>
             <p class="lead">
-                Aqui você encontrará os melhores itens para a higiene e limpeza do seu pet.
-                <br>
-                Produtos para o cuidado diário do seu pet e a limpeza do ambiente.
+                Esta página serve como documentação de ajuda do projeto, descrevendo as páginas e as funcionalidades do website.
             </p>
 
-            <!-- Dois produtos: uma coluna no celular, duas a partir do tablet -->
-            <div class="row g-4">
+            <h3>Páginas</h3>
+            <ul>
+                <li><strong>index.html</strong> - página inicial com apresentação da loja, carrossel de destaques e cartões das categorias.</li>
+                <li><strong>acessorios.html</strong> - quatro acessórios com foto, descrição e valor.</li>
+                <li><strong>racoes.html</strong> - duas rações com foto, descrição e valor.</li>
+                <li><strong>higiene.html</strong> - dois produtos de higiene e limpeza com foto, descrição e valor.</li>
+                <li><strong>servicos.html</strong> - tabela de banho e tosa com descrição, valor e acréscimo opcional de tele-busca.</li>
+                <li><strong>agendamento.html</strong> - formulário de cadastro do cliente e do pet, com escolha do serviço, da modalidade de entrega, da data e do horário.</li>
+                <li><strong>ajuda.html</strong> - descrição das páginas e funcionalidades do website.</li>
+            </ul>
 
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <article class="card h-100">
-                        <img src="assets/images/higiene/caixa-de-areia-fechada.jpg" class="card-img-top" alt="Caixa de areia fechada bege com cobertura removível e areia sanitária" width="400" height="400">
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title h5">Caixa de Areia Fechada</h3>
-                            <p class="card-text">Caixa sanitária de 50×40×40 cm em polipropileno, com cobertura removível que contém odores. Cor: bege com cinza.</p>
-                            <p class="mb-0 mt-auto">Valor: <strong>R$ 159,20</strong></p>
-                        </div>
-                    </article>
-                </div>
+            <h3>Funcionalidades</h3>
+            <ul>
+                <li>Menu de navegação responsivo no cabeçalho e lista de links no rodapé, presentes em todas as páginas.</li>
+                <li>Carrossel de destaques na página inicial, com troca automática e controles manuais.</li>
+                <li>Selo no cabeçalho que informa se a loja está aberta, calculado a partir do horário de funcionamento.</li>
+                <li>Visualização dos produtos separados por categoria, em cartões.</li>
+                <li>Tabela de serviços com valores e opção de tele-busca.</li>
+                <li>Formulário de agendamento com máscaras de CPF e telefone, barra de preenchimento, cálculo do valor total e regras de data e horário.</li>
+                <li>Contato por e-mail e telefone diretamente pelo rodapé.</li>
+            </ul>
 
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <article class="card h-100">
-                        <img src="assets/images/higiene/saquinhos-higienicos-com-dispenser.jpg" class="card-img-top" alt="Dispenser rosa em formato de osso ao lado de dois rolos de saquinhos com estampa de patinhas" width="400" height="400">
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title h5">Saquinhos Higiênicos com Dispenser Rosa</h3>
-                            <p class="card-text">Kit com dispenser em formato de osso e 4 rolos de 15 saquinhos cada. Com mosquetão para prender na guia. Cor: rosa.</p>
-                            <p class="mb-0 mt-auto">Valor: <strong>R$ 39,90</strong></p>
-                        </div>
-                    </article>
-                </div>
+            <h3>Como agendar um banho ou uma tosa</h3>
+            <ol>
+                <li>Abra a página de <a href="agendamento.html">agendamento</a>, pelo menu ou por este link.</li>
+                <li>Preencha os dados do tutor. O CPF e o telefone são formatados enquanto você digita.</li>
+                <li>Preencha os dados do pet.</li>
+                <li>Escolha o serviço e informe se leva o pet até a loja ou prefere a tele-busca, que custa R$ 25,00 a mais.</li>
+                <li>Escolha a data e o horário. O agendamento começa a partir do dia seguinte, de segunda a sábado, e aos sábados o último atendimento é às 12:00.</li>
+                <li>Confira o valor total, autorize o uso dos dados e envie. Entramos em contato para confirmar o horário.</li>
+            </ol>
+            <p>
+                A barra no topo do formulário mostra o quanto já foi preenchido. Enquanto ela não chegar a 100%, algum campo obrigatório ainda está vazio ou com o conteúdo fora do formato esperado.
+            </p>
 
-            </div>
+            <h3>Acessibilidade</h3>
+            <ul>
+                <li>Link de atalho para pular o menu e ir direto ao conteúdo.</li>
+                <li>Marcação semântica com header, nav, main, article e footer.</li>
+                <li>Atributo alt descritivo em todas as imagens.</li>
+                <li>Atributo aria-current identificando a página atual no menu.</li>
+                <li>Atributo aria-label distinguindo a navegação do cabeçalho da navegação do rodapé.</li>
+                <li>Rótulos associados aos campos do formulário e grupos de opções agrupados em fieldset com legend.</li>
+                <li>Marca de foco visível em todos os elementos navegáveis pelo teclado.</li>
+                <li>Contraste de cores adequados para textos e componentes de interface.</li>
+                <li>Transição do carrossel desligada para quem configura o sistema com movimento reduzido.</li>
+            </ul>
+
+            <h3>Tecnologias</h3>
+            <ul>
+                <li>HTML5.</li>
+                <li>CSS3, com folha de estilo própria em assets/css/estilo.css.</li>
+                <li>Bootstrap 5.3.8, hospedado no próprio repositório em assets/vendor.</li>
+                <li>JavaScript, em assets/js/principal.js e assets/js/agendamento.js.</li>
+            </ul>
+
+            <p>
+                As bibliotecas e a fonte são servidas pelo próprio repositório, sem depender de CDN.
+                <br>
+                Todas as páginas foram validadas no <a href="https://validator.w3.org/">W3C Markup Validation Service</a>, sem erros.
+            </p>
+
+            <h3>Autor</h3>
+            <p>Marcus Ricardo Lopes de Souza</p>
+
+            <h3>Créditos</h3>
+            <ul>
+                <li>Imagens: Designed by <a href="https://www.magnific.com">Magnific.com</a></li>
+                <li>Fonte: <a href="https://github.com/googlefonts/nunito">Nunito</a>, sob licença SIL Open Font License 1.1</li>
+                <li>Bootstrap v5.3.8 (<a href="https://getbootstrap.com/">getbootstrap.com</a>), sob licença MIT</li>
+            </ul>
 
         </section>
 

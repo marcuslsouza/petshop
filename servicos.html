@@ -1,109 +1,196 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços - Pet Shop Felpudos</title>
-</head>
-<body>
-    <header>
-        <h1>Serviços - Pet Shop Felpudos</h1>
-        <p>Banho e Tosa com opção de tele-busca do seu pet.</p>
+    
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon.png" sizes="96x96">
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="acessorios.html">Acessórios</a></li>
-                <li><a href="racoes.html">Rações</a></li>
-                <li><a href="higiene.html">Higiene e Limpeza</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-            </ul>
+    <!-- Utilizei a versão local do Bootstrap v5.3.8 para garantir disponibilidade -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+
+<body>
+    <!-- Link de atalho (escondido até utilizarem o tab) -->
+    <a class="visually-hidden-focusable link-atalho" href="#conteudo">Pular para o conteúdo principal</a>
+
+    <!-- CABEÇALHO -->
+    <header>
+
+        <!-- Barra superior -->
+        <div class="barra-superior">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2 py-1">
+                <p class="mb-0 small">Rua 3200, 1450 - Centro, Balneário Camboriú/SC</p>
+                <span id="situacao-loja" class="badge text-bg-secondary">Segunda a sexta, 8h às 19h</span>
+            </div>
+        </div>
+
+        <!-- Menu de navegação: componente navbar do Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-felpudos" data-bs-theme="dark" aria-label="Menu principal">
+            <div class="container">
+
+                <h1 class="navbar-brand marca">
+                    <a class="marca-nome" href="index.html">Pet Shop Felpudos</a>
+                    <span class="marca-slogan">Acessórios, Rações, Banho e Tosa</span>
+                </h1>
+
+                <!-- Botão sanfona, exibido apenas em telas pequenas -->
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                        aria-controls="menuPrincipal" aria-expanded="false"
+                        aria-label="Abrir e fechar o menu de navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <!-- aria-current="page" marca a página atual para leitores de tela -->
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acessorios.html">Acessórios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="racoes.html">Rações</a></li>
+                        <li class="nav-item"><a class="nav-link" href="higiene.html">Higiene e Limpeza</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="servicos.html" aria-current="page">Serviços</a></li>
+                        <!-- Chamada principal. Continua sendo um link (leva para outra página) -->
+                        <li class="nav-item ms-lg-3">
+                            <a class="nav-link link-destaque" href="agendamento.html">Agendar banho e tosa</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </nav>
 
     </header>
-    
-    <section>
-        <h2>Banho e Tosa</h2>
-        <p>
-            Atendimento realizado por profissionais treinados e produtos de qualidade e hipoalergênicos.
-            <br>
-            Todos os serviços podem ser contratados com tele-busca: nós buscamos e devolvemos o seu pet em casa limpo e cheiroso.
-        </p>
 
-        <img src="assets/images/servicos/banho-e-tosa.jpg" alt="Cachorro preto de grande porte sendo escovado por profissional de pet shop" width="600" height="400">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="conteudo">
 
-        <h3>Tabela de preços</h3>
+        <section class="container secao">
+            <h2>Banho e Tosa</h2>
+            <p class="lead">
+                Atendimento realizado por profissionais treinados e produtos de qualidade e hipoalergênicos.
+                <br>
+                Todos os serviços podem ser contratados com tele-busca: nós buscamos e devolvemos o seu pet em casa limpo e cheiroso.
+            </p>
 
-        <table>
-            <caption>Serviços e valores</caption>
-            <thead>
-                <tr>
-                    <th>Serviço</th>
-                    <th>Descrição</th>
-                    <th>Tele-busca</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Banho Básico</td>
-                    <td>Banho com shampoo neutro, secagem e escovação.</td>
-                    <td>Opcional (+ R$ 25,00)</td>
-                    <td>R$ 60,00</td>
-                </tr>
-                <tr>
-                    <td>Banho Premium</td>
-                    <td>Banho com shampoo hidratante, condicionador, secagem, escovação, limpeza de ouvidos e corte de unhas.</td>
-                    <td>Opcional (+ R$ 25,00)</td>
-                    <td>R$ 100,00</td>
-                </tr>
-                <tr>
-                    <td>Tosa Higiênica</td>
-                    <td>Aparo do pelo das patas, barriga e região íntima.</td>
-                    <td>Opcional (+ R$ 25,00)</td>
-                    <td>R$ 70,00</td>
-                </tr>
-                <tr>
-                    <td>Tosa Premium</td>
-                    <td>Tosa completa na tesoura ou máquina, com acabamento conforme a raça ou pedido do tutor.</td>
-                    <td>Opcional (+ R$ 25,00)</td>
-                    <td>R$ 130,00</td>
-                </tr>
-            </tbody>
-        </table>
+            <figure class="figura-servicos">
+                <img src="assets/images/servicos/banho-e-tosa.jpg" class="rounded" alt="Cachorro preto de grande porte sendo escovado por profissional de pet shop" width="600" height="400">
+            </figure>
 
-    </section>
-    
-    <footer>
-        <h2>Dados para contato:</h2>
+            <h3>Tabela de preços</h3>
 
-        <address>
-            Pet Shop Felpudos
-            <br>
-            Rua 3200, 1450, Centro - Balneário Camboriú/SC
-            <br>
-            Telefone: <a href="tel:+5547999887766">(47) 99988-7766</a>
-            <br>
-            E-mail: <a href="mailto:contato@felpudospetshop.com.br?subject=Contato%20pelo%20website">contato@felpudospetshop.com.br</a>
-        </address>
+            <!-- O table-responsive faz a tabela rolar sozinha no celular, sem empurrar a página -->
+            <div class="table-responsive">
+                <table class="table table-striped tabela-servicos">
+                    <caption>Serviços e valores</caption>
+                    <thead>
+                        <tr>
+                            <th>Serviço</th>
+                            <th>Descrição</th>
+                            <th>Tele-busca</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Banho Básico</td>
+                            <td>Banho com shampoo neutro, secagem e escovação.</td>
+                            <td>Opcional (+ R$ 25,00)</td>
+                            <td>R$ 60,00</td>
+                        </tr>
+                        <tr>
+                            <td>Banho Premium</td>
+                            <td>Banho com shampoo hidratante, condicionador, secagem, escovação, limpeza de ouvidos e corte de unhas.</td>
+                            <td>Opcional (+ R$ 25,00)</td>
+                            <td>R$ 100,00</td>
+                        </tr>
+                        <tr>
+                            <td>Tosa Higiênica</td>
+                            <td>Aparo do pelo das patas, barriga e região íntima.</td>
+                            <td>Opcional (+ R$ 25,00)</td>
+                            <td>R$ 70,00</td>
+                        </tr>
+                        <tr>
+                            <td>Tosa Premium</td>
+                            <td>Tosa completa na tesoura ou máquina, com acabamento conforme a raça ou pedido do tutor.</td>
+                            <td>Opcional (+ R$ 25,00)</td>
+                            <td>R$ 130,00</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">A tele-busca custa R$ 25,00 por atendimento e pode ser contratada com qualquer um dos serviços acima.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="acessorios.html">Acessórios</a></li>
-                <li><a href="racoes.html">Rações</a></li>
-                <li><a href="higiene.html">Higiene e Limpeza</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-            </ul>
-        </nav>
+        </section>
 
-        <p>
-            <small>&copy; 2026 Pet Shop Felpudos. Autor: Marcus Ricardo Lopes de Souza</small>
-            <br>
-            <small>Imagens: Designed by <a href="https://www.magnific.com">Magnific.com</a></small>
-        </p>
+    </main>
 
+    <footer class="rodape">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-12 col-md-5">
+                    <h2 class="h5">Dados para contato</h2>
+                    <address class="mb-0">
+                        Pet Shop Felpudos
+                        <br>
+                        Rua 3200, 1450, Centro - Balneário Camboriú/SC
+                        <br>
+                        Telefone: <a href="tel:+5547999887766">(47) 99988-7766</a>
+                        <br>
+                        E-mail: <a href="mailto:contato@felpudospetshop.com.br?subject=Contato%20pelo%20website">contato@felpudospetshop.com.br</a>
+                    </address>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h2 class="h5">Navegação</h2>
+                    <nav aria-label="Menu do rodapé">
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="acessorios.html">Acessórios</a></li>
+                            <li><a href="racoes.html">Rações</a></li>
+                            <li><a href="higiene.html">Higiene e Limpeza</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="agendamento.html">Agendamento</a></li>
+                            <li><a href="ajuda.html">Ajuda</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <h2 class="h5">Horário</h2>
+                    <p class="mb-0">
+                        Segunda a sexta: 8h às 19h
+                        <br>
+                        Sábado: 8h às 13h
+                        <br>
+                        Domingo: fechado
+                    </p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="mb-0 small">
+                &copy; <span id="ano-atual">2026</span> Pet Shop Felpudos.
+                Autor: Marcus Ricardo Lopes de Souza.
+                Imagens: Designed by <a href="https://www.magnific.com">Magnific.com</a>
+            </p>
+        </div>
     </footer>
-    
+
+    <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/principal.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,386 @@
+/* TIPOGRAFIA */
+@font-face {
+    font-family: "Nunito";
+    /* Criei um subset da versão variável da fonte e exportei em woff2 para aliviar o peso. Usei arquivo local para garantir disponibilidade. */
+    src: url("../fonts/Nunito-VariableFont_wght-subset.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* VARIÁVEIS DE CORES E MEDIDAS */
+:root {
+    --felpudos-primaria: #1b5e5a;
+    --felpudos-primaria-escura: #12403d;
+    --felpudos-destaque: #f2a03d;
+    --felpudos-destaque-escura: #d8862a;
+    --felpudos-destaque-clara: #f7c26b;
+    --felpudos-fundo: #f6f8f7;
+    --felpudos-superficie: #ffffff;
+    --felpudos-texto: #1f2a28;
+    --felpudos-texto-suave: #4d5a58;
+    --felpudos-borda: #dfe6e4;
+    --felpudos-raio: 12px;
+}
+
+/* BASE */
+body {
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    background-color: var(--felpudos-fundo);
+    color: var(--felpudos-texto);
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 800;
+    color: var(--felpudos-primaria-escura);
+}
+
+main h2 {
+    font-size: 2rem;
+}
+
+main h3 {
+    margin-top: 2rem;
+}
+
+/* Links dentro do conteúdo, para não herdar o azul padrão do Bootstrap */
+main a {
+    color: var(--felpudos-primaria);
+}
+
+main a:hover {
+    color: var(--felpudos-primaria-escura);
+}
+
+/* Impede que as imagens do conteúdo estourem a largura do container */
+main img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Limita a largura do texto corrido para facilitar a leitura */
+.lead {
+    max-width: 720px;
+    color: var(--felpudos-texto-suave);
+}
+
+.secao {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* CARDS DE PRODUTOS */
+.card {
+    background-color: var(--felpudos-superficie);
+    border: 1px solid var(--felpudos-borda);
+    border-radius: var(--felpudos-raio);
+    /* Recorta a imagem nos cantos arredondados do cartão */
+    overflow: hidden;
+}
+
+/* Anula a margem de main h3 que existe para os títulos de seção */
+.card-title {
+    margin-top: 0;
+}
+
+/* Iguala a altura das fotos, recortando as que têm proporção diferente */
+.card-img-top {
+    height: 320px;
+    object-fit: cover;
+}
+
+/* TABELA DE SERVIÇOS */
+.tabela-servicos thead {
+    background-color: var(--felpudos-primaria);
+    color: #ffffff;
+}
+
+.tabela-servicos tfoot {
+    background-color: var(--felpudos-fundo);
+    font-weight: 600;
+}
+
+/* O caption padrão fica embaixo da tabela e em cinza claro */
+.tabela-servicos caption {
+    caption-side: top;
+    color: var(--felpudos-texto);
+    font-weight: bold;
+}
+
+/* Limita a imagem do serviço para não dominar a página no desktop */
+.figura-servicos img {
+    max-width: 600px;
+}
+
+/* FORMULÁRIO DE AGENDAMENTO */
+.formulario-agendamento fieldset {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--felpudos-superficie);
+    border: 1px solid var(--felpudos-borda);
+    border-radius: var(--felpudos-raio);
+}
+
+/* O Bootstrap deixa a legend em bloco de largura total, o que atrapalha dentro da moldura */
+.formulario-agendamento legend {
+    float: none;
+    width: auto;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--felpudos-primaria-escura);
+}
+
+/* Grupos de opções são fieldsets aninhados e não repetem a moldura do de fora */
+.formulario-agendamento .grupo-opcoes {
+    margin-bottom: 0;
+    padding: 0 0 0 0.5rem;
+    background-color: transparent;
+    border: 0;
+}
+
+.formulario-agendamento .grupo-opcoes legend {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--felpudos-texto);
+}
+
+.formulario-agendamento .form-label,
+.formulario-agendamento .grupo-opcoes legend {
+    font-weight: bold;
+}
+
+.formulario-agendamento .grupo-opcoes .form-check {
+    margin-top: 0.5rem;
+}
+
+.botao-enviar {
+    background-color: var(--felpudos-destaque);
+    border: 1px solid var(--felpudos-destaque-escura);
+    color: var(--felpudos-texto);
+    font-weight: bold;
+}
+
+.botao-enviar:hover {
+    background-color: var(--felpudos-destaque-escura);
+    color: var(--felpudos-texto);
+}
+
+/* O progress nativo precisa de pseudo-elementos com prefixo para receber cor */
+.formulario-agendamento progress {
+    display: block;
+    width: 100%;
+    height: 12px;
+    margin-bottom: 0.25rem;
+}
+
+.formulario-agendamento progress::-webkit-progress-bar {
+    background-color: var(--felpudos-borda);
+    border-radius: var(--felpudos-raio);
+}
+
+.formulario-agendamento progress::-webkit-progress-value {
+    background-color: var(--felpudos-primaria);
+    border-radius: var(--felpudos-raio);
+}
+
+.formulario-agendamento progress::-moz-progress-bar {
+    background-color: var(--felpudos-primaria);
+    border-radius: var(--felpudos-raio);
+}
+
+.formulario-agendamento .valor-total {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--felpudos-primaria-escura);
+}
+
+/* CARROSSEL */
+.imagem-carrossel {
+    height: 450px;
+    object-fit: cover;
+}
+
+/* Faixa verde escura atrás da legenda */
+.carousel-caption {
+    right: 5%;
+    bottom: 3rem;
+    left: 5%;
+    padding: 0.75rem 1rem;
+    background-color: rgba(18, 64, 61, 0.85);
+    border-radius: var(--felpudos-raio);
+}
+
+/* Sombra escura e opacidade maior para as setas */
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 0.7;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.9));
+}
+
+/* Mesma ideia nos indicadores de posição */
+.carousel-indicators [data-bs-target] {
+    height: 6px;
+    opacity: 0.5;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.9));
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: var(--felpudos-destaque);
+}
+
+/* A legenda vira o link do slide. Fica branca porque a faixa verde é escura */
+.link-carrossel {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.link-carrossel:hover {
+    color: var(--felpudos-destaque-clara);
+}
+
+/* Respeita quem pediu menos movimento nas configurações do sistema */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-item {
+        transition: none;
+    }
+}
+
+/* ACESSIBILIDADE */
+
+/* Link de atalho: aparece sobre o cabeçalho quando recebe foco */
+.link-atalho:focus {
+    position: absolute;
+    z-index: 1080;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--felpudos-superficie);
+    color: var(--felpudos-primaria-escura);
+    border-radius: var(--felpudos-raio);
+    font-weight: bold;
+}
+
+/* Marca visível de foco para quem navega pelo teclado. */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--felpudos-primaria-escura);
+    outline-offset: 2px;
+}
+
+/* Sobre os fundos verdes escuros a marca escura não apareceria. Trocado pela versão clara do laranja. */
+.navbar-felpudos a:focus,
+.navbar-felpudos button:focus,
+.rodape a:focus,
+.navbar-felpudos a:focus-visible,
+.navbar-felpudos button:focus-visible,
+.rodape a:focus-visible {
+    outline-color: var(--felpudos-destaque-clara);
+}
+
+/* CABEÇALHO */
+.barra-superior {
+    background-color: var(--felpudos-primaria-escura);
+    color: #ffffff;
+}
+
+.navbar-felpudos {
+    background-color: var(--felpudos-primaria);
+}
+
+.navbar-felpudos .marca {
+    margin-bottom: 0;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+.marca-nome {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.marca-nome:hover {
+    color: var(--felpudos-destaque-clara);
+}
+
+.marca-slogan {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+.navbar-felpudos .nav-link {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.navbar-felpudos .nav-link.active {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.navbar-felpudos .nav-link:hover {
+    color: var(--felpudos-destaque-clara);
+}
+
+/* LINKS DE AÇÃO */
+.navbar-felpudos .nav-link.link-destaque {
+    color: var(--felpudos-destaque-clara);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.navbar-felpudos .nav-link.link-destaque:hover {
+    color: #ffffff;
+}
+
+/* RODAPÉ */
+.rodape {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background-color: var(--felpudos-primaria-escura);
+    color: #ffffff;
+}
+
+.rodape h2 {
+    color: var(--felpudos-destaque-clara);
+}
+
+.rodape a {
+    color: #ffffff;
+}
+
+.rodape a:hover {
+    color: var(--felpudos-destaque-clara);
+}
+
+.rodape address {
+    font-style: normal;
+}
+
+.rodape hr {
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+    border-color: rgba(255, 255, 255, 0.35);
+}
